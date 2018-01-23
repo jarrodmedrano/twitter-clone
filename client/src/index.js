@@ -10,8 +10,7 @@ import App from './components/App';
 
 const store = createStore(
   reducers,
-  {}, applyMiddleware(reduxThunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  {}, applyMiddleware(reduxThunk)
 );
 
 ReactDOM.render(
