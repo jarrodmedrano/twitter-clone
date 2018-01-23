@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
     return (
         <nav>
           <div className="nav-wrapper">
-            <a href="#" className="left brand-logo">Emaily</a>
+            <a href="/" className="left brand-logo">Emaily</a>
             <ul id="nav-mobile" className="right">
               <li><a>Login With Google</a></li>
             </ul>
@@ -14,3 +15,9 @@ export default class Header extends Component {
     )
   }
 }
+
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps)(Header);
