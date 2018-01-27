@@ -1,11 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class SurveyField extends Component {
-  render() {
-    return (
-      <input />
-    );
-  }
-}
-
-export default SurveyField;
+export default ({ input, label, meta: { error, touched } }) => {
+  return (
+    <div>
+      <label>{label}</label>
+      <input {...input} style={{ marginBottom: '5px' }} />
+      <div className="error red-text" style={{ marginBottom: '5px' }}>
+        {touched && error}
+      </div>
+    </div>
+  );
+};
