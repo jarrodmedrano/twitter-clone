@@ -1,3 +1,3 @@
-# An email survey app
+# A twitter clone
 
-https://safe-citadel-43829.herokuapp.com/surveys
+https://jarrod-twitter-clone.herokuapp.com/
