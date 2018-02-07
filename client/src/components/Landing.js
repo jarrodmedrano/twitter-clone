@@ -12,9 +12,11 @@ class Landing extends Component {
         return <a href="/auth/google">Login With Google</a>;
       default:
         return [
-          <Link to="/tweets/new" className="btn blue darken-2">
-            Give a hoot, post a tweet
-          </Link>,
+          <div style={{ textAlign: 'center' }}>
+            <Link to="/tweets/new" className="btn blue darken-2">
+              Give a hoot, post a tweet
+            </Link>
+          </div>,
           <TweetList />,
         ];
     }
