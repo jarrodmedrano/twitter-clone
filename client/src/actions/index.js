@@ -22,6 +22,5 @@ export const submitTweet = (values, history) => async dispatch => {
 
 export const fetchTweets = () => async dispatch => {
   const res = await axios.get('/api/tweets');
-  console.log('response', res.data);
   dispatch({ type: FETCH_TWEETS, payload: res.data });
 };

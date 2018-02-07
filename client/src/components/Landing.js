@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import TweetList from './forms/TweetList';
+import TweetButton from './TweetButton';
 
 class Landing extends Component {
   renderContent() {
@@ -11,14 +12,7 @@ class Landing extends Component {
       case false:
         return <a href="/auth/google">Login With Google</a>;
       default:
-        return [
-          <div style={{ textAlign: 'center' }}>
-            <Link to="/tweets/new" className="btn blue darken-2">
-              Give a hoot, post a tweet
-            </Link>
-          </div>,
-          <TweetList />,
-        ];
+        return [<TweetButton key="0" />, <TweetList key="1" />];
     }
   }
 
