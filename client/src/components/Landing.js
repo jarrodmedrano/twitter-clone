@@ -10,7 +10,11 @@ class Landing extends Component {
       case null:
         return 'Still deciding';
       case false:
-        return <a href="/auth/google">Login With Google</a>;
+        return (
+          <div style={{ textAlign: 'center' }} key="0">
+            <a href="/auth/google">Login With Google</a>
+          </div>
+        );
       default:
         return [<TweetButton key="0" />, <TweetList key="1" />];
     }
