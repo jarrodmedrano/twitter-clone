@@ -17,13 +17,36 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Header />
-          <div className="container">
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/tweets" component={Dashboard} />
-            <Route path="/tweets/new" component={SurveyNew} />
-            <Route exact path="/credits" component={Credits} />
-          </div>
+          <header>
+            <Header />
+          </header>
+          <main>
+            <div className="container">
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/tweets" component={Dashboard} />
+              <Route path="/tweets/new" component={SurveyNew} />
+              <Route exact path="/credits" component={Credits} />
+            </div>
+          </main>
+          <footer class="page-footer blue lighten-4">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Thanks for stopping by</h5>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+                This app was built with node & React.
+                <a class="grey-text text-lighten-4 right" href="#!">
+                  <a class="white-text" href="http://www.slashclick.com/">
+                    My Website
+                  </a>
+                </a>
+              </div>
+            </div>
+          </footer>
         </div>
       </BrowserRouter>
     );
