@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { FETCH_USER } from './types';
-import { FETCH_SURVEYS } from './types';
+import { FETCH_TWEETS } from './types';
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/current_user');
@@ -14,14 +14,14 @@ export const handleToken = token => async dispatch => {
   dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export const submitSurvey = (values, history) => async dispatch => {
-  const res = await axios.post('/api/surveys', values);
-  history.push('/surveys');
+export const submitTweet = (values, history) => async dispatch => {
+  const res = await axios.post('/api/tweets', values);
+  history.push('/');
   dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export const fetchSurveys = () => async dispatch => {
-  const res = await axios.get('/api/surveys');
-
-  dispatch({ type: FETCH_SURVEYS, payload: res.data });
+export const fetchTweets = () => async dispatch => {
+  const res = await axios.get('/api/tweets');
+  console.log('response', res.data);
+  dispatch({ type: FETCH_TWEETS, payload: res.data });
 };

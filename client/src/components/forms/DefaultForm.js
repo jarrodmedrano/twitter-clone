@@ -2,17 +2,17 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import SurveyField from './SurveyField';
+import FormField from './FormField';
 import validateEmails from '../../utils/validateEmails';
 import formFields from './formFields';
 
-class SurveyForm extends Component {
+class DefaultForm extends Component {
   renderFields() {
     return _.map(formFields, ({ label, name }) => {
       return (
         <Field
           key={name}
-          component={SurveyField}
+          component={FormField}
           type="text"
           label={label}
           name={name}
@@ -55,6 +55,6 @@ function validate(values) {
 
 export default reduxForm({
   validate,
-  form: 'surveyForm',
+  form: 'DefaultForm',
   destroyOnUnmount: false,
-})(SurveyForm);
+})(DefaultForm);
