@@ -7,3 +7,7 @@ body > div > div {
 main {
     flex: 1 0 auto;
 }
+
+input {
+    font-size: 16px !important;
+}
