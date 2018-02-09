@@ -12,7 +12,7 @@ class TweetList extends Component {
       return (
         <div className="card darken-1" key={tweet._id}>
           <div className="card-content">
-            <span className="card-title">{tweet.title}</span>
+            <h4>{tweet.title}</h4>
             <p>{tweet.body}</p>
             <p className="right">
               Sent On: {new Date(tweet.dateSent).toLocaleDateString()}
