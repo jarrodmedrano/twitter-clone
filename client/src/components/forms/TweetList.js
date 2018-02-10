@@ -8,11 +8,12 @@ class TweetList extends Component {
   }
 
   renderTweets() {
-    return this.props.tweets.reverse().map(tweet => {
+    const reversedTweets = [...this.props.tweets].reverse();
+    return reversedTweets.map(tweet => {
       return (
         <div className="card darken-1" key={tweet._id}>
           <div className="card-content">
-            <h4>{tweet.title}</h4>
+            <span className="card-title">{tweet.title}</span>
             <p>{tweet.body}</p>
             <p className="right">
               Sent On: {new Date(tweet.dateSent).toLocaleDateString()}
