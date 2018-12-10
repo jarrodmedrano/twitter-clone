@@ -2,9 +2,21 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import FormField from './FormField';
 import validateEmails from '../../utils/validateEmails';
 import formFields from './formFields';
+import {View} from 'react-native';
+
+const FormField = ({ input, label, meta: { error, touched } }) => {
+    return (
+        <View>
+            <label>{label}</label>
+            <input {...input} style={{ marginBottom: '5px' }} />
+            <div className="error red-text" style={{ marginBottom: '5px' }}>
+                {touched && error}
+            </div>
+        </View>
+    );
+};
 
 class DefaultForm extends Component {
   renderFields() {
